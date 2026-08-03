@@ -263,3 +263,64 @@ input:focus, select:focus, textarea:focus {
   transform: scale(1.02);
 }
 
+/* --- Form Page Styling --- */
+.form-section {
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--apple-card-solid);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--apple-border);
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.error-text {
+  color: var(--apple-error);
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--apple-blue);
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 980px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-ios);
+}
+
+button[type="submit"]:hover {
+  background-color: var(--apple-blue-hover);
+  transform: scale(1.01);
+}
+
+.alert-box {
+  padding: 0.85rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.alert-box.success {
+  background-color: rgba(52, 199, 89, 0.12);
+  color: #1b7a36;
+  border: 1px solid rgba(52, 199, 89, 0.3);
+}
+

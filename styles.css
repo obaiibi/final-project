@@ -133,3 +133,23 @@ nav a.active {
   font-weight: 600;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+
+/* --- Hero Banner Section --- */
+.hero {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.4rem;
+}
+
+.hero p {
+  color: var(--apple-text-muted);
+  font-size: 1.05rem;
+}
+

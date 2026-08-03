@@ -32,3 +32,53 @@
 
       <!-- Feedback Alert Box -->
       <div id="messageBox" class="alert-box" hidden></div>
+      <!-- User Input Form -->
+      <form id="resourceForm" novalidate>
+        <div class="form-group">
+          <label for="title">Resource Title *</label>
+          <input type="text" id="title" name="title" placeholder="e.g., Midterm Cheat Sheet">
+          <small class="error-text" id="titleError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course Code *</label>
+          <input type="text" id="course" name="course" placeholder="e.g., CS101 or MATH202">
+          <small class="error-text" id="courseError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="category">Category *</label>
+          <select id="category" name="category">
+            <option value="">-- Select Category --</option>
+            <option value="Lecture Notes">Lecture Notes</option>
+            <option value="Study Guide">Study Guide</option>
+            <option value="Practice Quiz">Practice Quiz</option>
+            <option value="Cheatsheet">Cheatsheet</option>
+          </select>
+          <small class="error-text" id="categoryError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="link">Resource URL *</label>
+          <input type="url" id="link" name="link" placeholder="https://example.com/notes.pdf">
+          <small class="error-text" id="linkError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Short Description *</label>
+          <textarea id="description" name="description" rows="4" placeholder="Briefly explain what this resource covers..."></textarea>
+          <small class="error-text" id="descriptionError"></small>
+        </div>
+
+        <button type="submit" id="submitBtn">Submit Resource</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 StudyBud Project. Developed for Web Development Assessment.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -153,3 +153,35 @@ nav a.active {
   font-size: 1.05rem;
 }
 
+/* --- Controls Section (Search & Select) --- */
+.controls-section {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.search-box { flex: 2; min-width: 260px; }
+.filter-box { flex: 1; min-width: 180px; }
+
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--apple-card-solid);
+  border: 1px solid var(--apple-border);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  color: var(--apple-text-dark);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s var(--ease-ios);
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--apple-blue);
+  box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
+}
+

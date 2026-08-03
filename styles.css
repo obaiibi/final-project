@@ -324,3 +324,101 @@ button[type="submit"]:hover {
   border: 1px solid rgba(52, 199, 89, 0.3);
 }
 
+/* --- Dashboard & Metrics Styling --- */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.metric-card {
+  background: var(--apple-card-solid);
+  border: 1px solid var(--apple-border);
+  padding: 1.5rem 1rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-card h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--apple-text-muted);
+}
+
+.metric-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--apple-blue);
+  margin-top: 0.25rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid var(--apple-border);
+  background: var(--apple-card-solid);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--apple-border);
+  font-size: 0.875rem;
+}
+
+th {
+  background-color: #fafafa;
+  color: var(--apple-text-muted);
+  font-weight: 600;
+}
+
+.btn-delete {
+  background-color: rgba(255, 59, 48, 0.1);
+  color: var(--apple-error);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 980px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-ios);
+}
+
+.btn-delete:hover {
+  background-color: var(--apple-error);
+  color: #ffffff;
+}
+
+footer {
+  background: var(--apple-bg);
+  border-top: 1px solid var(--apple-border);
+  text-align: center;
+  padding: 1.75rem;
+  color: var(--apple-text-muted);
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .controls-section {
+    flex-direction: column;
+  }
+
+  main {
+    width: 92%;
+  }
+}
+

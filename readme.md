@@ -137,7 +137,7 @@ Potential enhancements include:
 
 # 👨‍💻 Author
 
-**Mustafa Meitamei**
+**Mustafa Meitamei M.**
 
 Final Project — Web Development
 
@@ -147,4 +147,5 @@ Final Project — Web Development
 
 This project is intended for educational purposes only.
 
-© 2026 StudyBud. All rights reserved.
+© 2026 StudyBud Project.
+ All rights reserved.

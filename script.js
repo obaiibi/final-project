@@ -76,7 +76,7 @@ function initExplorerPage() {
     filtered.forEach(item => {
       const card = document.createElement('article');
       card.className = 'card';
-
+      
       // Fallback image if user didn't specify one
       const cardImgSrc = item.image || 'images/study-desk.jpg';
 

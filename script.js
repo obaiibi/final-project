@@ -98,3 +98,94 @@ function initExplorerPage() {
   categoryFilter.addEventListener('change', renderCards);
   renderCards();
 }
+
+/* ==========================================================================
+   2. FORM PAGE (add-resource.html)
+   ========================================================================== */
+function initFormPage() {
+  const form = document.getElementById('resourceForm');
+  const messageBox = document.getElementById('messageBox');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const title = document.getElementById('title').value.trim();
+    const course = document.getElementById('course').value.trim();
+    const category = document.getElementById('category').value;
+    const link = document.getElementById('link').value.trim();
+    const description = document.getElementById('description').value.trim();
+
+    clearErrors();
+    let isValid = true;
+
+    if (!title) {
+      showError('titleError', 'Resource title is required.');
+      isValid = false;
+    }
+
+    if (!course) {
+      showError('courseError', 'Course code is required (e.g., CS101).');
+      isValid = false;
+    }
+
+    if (!category) {
+      showError('categoryError', 'Please select a valid category.');
+      isValid = false;
+    }
+
+    if (!link || !isValidURL(link)) {
+      showError('linkError', 'Please provide a valid URL starting with http:// or https://');
+      isValid = false;
+    }
+
+    if (!description || description.length < 10) {
+      showError('descriptionError', 'Description must be at least 10 characters long.');
+      isValid = false;
+    }
+
+    if (isValid) {
+      const newResource = {
+        id: Date.now().toString(),
+        title,
+        course,
+        category,
+        link,
+        image: 'images/study-desk.jpg',
+        description
+      };
+
+      const existingData = getStoredResources();
+      existingData.push(newResource);
+      saveResourcesToStorage(existingData);
+
+      messageBox.className = 'alert-box success';
+      messageBox.textContent = 'Resource successfully added! Check the Explore page.';
+      messageBox.hidden = false;
+
+      form.reset();
+
+      setTimeout(() => {
+        messageBox.hidden = true;
+      }, 4000);
+    }
+  });
+
+  function showError(elementId, message) {
+    document.getElementById(elementId).textContent = message;
+  }
+
+  function clearErrors() {
+    const errorElements = document.querySelectorAll('.error-text');
+    errorElements.forEach(el => el.textContent = '');
+  }
+
+  function isValidURL(string) {
+    try {
+      const url = new URL(string);
+      return url.protocol === "http:" || url.protocol === "https:";
+    } catch (_) {
+      return false;
+    }
+  }
+}
+

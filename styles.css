@@ -185,3 +185,81 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.15);
 }
 
+/* --- Dynamic Card Grid --- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: var(--apple-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--apple-border);
+  border-radius: 18px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.35s var(--ease-ios);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 113, 227, 0.2);
+}
+
+.card-tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: rgba(0, 113, 227, 0.08);
+  color: var(--apple-blue);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 980px;
+  margin-bottom: 0.6rem;
+}
+
+.card h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
+
+.course-code {
+  color: var(--apple-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  color: var(--apple-text-dark);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card a {
+  display: block;
+  text-align: center;
+  background-color: var(--apple-blue);
+  color: #ffffff;
+  padding: 0.65rem 1rem;
+  border-radius: 980px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.25s var(--ease-ios);
+}
+
+.card a:hover {
+  background-color: var(--apple-blue-hover);
+  transform: scale(1.02);
+}
+

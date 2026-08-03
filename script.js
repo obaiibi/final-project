@@ -77,4 +77,24 @@ function initExplorerPage() {
       const card = document.createElement('article');
       card.className = 'card';
 
-      
+      // Fallback image if user didn't specify one
+      const cardImgSrc = item.image || 'images/study-desk.jpg';
+
+      card.innerHTML = `
+        <div>
+          <img src="${cardImgSrc}" alt="${sanitizeHTML(item.title)}" class="card-img">
+          <span class="card-tag">${sanitizeHTML(item.category)}</span>
+          <h4>${sanitizeHTML(item.title)}</h4>
+          <p class="course-code">Course: <strong>${sanitizeHTML(item.course)}</strong></p>
+          <p>${sanitizeHTML(item.description)}</p>
+        </div>
+        <a href="${sanitizeHTML(item.link)}" target="_blank" rel="noopener noreferrer">View Resource</a>
+      `;
+      gridContainer.appendChild(card);
+    });
+  }
+
+  searchInput.addEventListener('input', renderCards);
+  categoryFilter.addEventListener('change', renderCards);
+  renderCards();
+}

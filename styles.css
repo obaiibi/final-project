@@ -15,14 +15,14 @@
   --apple-error: #ff3b30;
   --apple-success: #34c759;
 
-/* Glassmorphism & Shadows */
+  /* Glassmorphism & Shadows */
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-blur: blur(20px) saturate(180%);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 16px 32px rgba(0, 0, 0, 0.12);
 
-/* iOS Animation Curve */
+  /* iOS Animation Curve */
   --ease-ios: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -421,4 +421,3 @@ footer {
     width: 92%;
   }
 }
-

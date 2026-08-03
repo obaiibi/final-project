@@ -189,3 +189,74 @@ function initFormPage() {
   }
 }
 
+/* ==========================================================================
+   3. DASHBOARD PAGE (dashboard.html)
+   ========================================================================== */
+function initDashboardPage() {
+  const totalCountEl = document.getElementById('totalCount');
+  const courseCountEl = document.getElementById('courseCount');
+  const topCategoryEl = document.getElementById('topCategory');
+  const tableBody = document.getElementById('managementTableBody');
+
+  function renderDashboard() {
+    const resources = getStoredResources();
+
+    totalCountEl.textContent = resources.length;
+
+    const uniqueCourses = new Set(resources.map(r => r.course.toUpperCase()));
+    courseCountEl.textContent = uniqueCourses.size;
+
+    const categoryCounts = {};
+    resources.forEach(r => {
+      categoryCounts[r.category] = (categoryCounts[r.category] || 0) + 1;
+    });
+
+    let topCat = 'N/A';
+    let max = 0;
+    for (const cat in categoryCounts) {
+      if (categoryCounts[cat] > max) {
+        max = categoryCounts[cat];
+        topCat = cat;
+      }
+    }
+    topCategoryEl.textContent = topCat;
+
+    tableBody.innerHTML = '';
+
+    if (resources.length === 0) {
+      tableBody.innerHTML = `<tr><td colspan="4" style="text-align:center;">No resources available to manage.</td></tr>`;
+      return;
+    }
+
+    resources.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${sanitizeHTML(item.title)}</td>
+        <td>${sanitizeHTML(item.course)}</td>
+        <td>${sanitizeHTML(item.category)}</td>
+        <td>
+          <button class="btn-delete" data-id="${item.id}">Delete</button>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    });
+  }
+
+  tableBody.addEventListener('click', (e) => {
+    if (e.target.classList.contains('btn-delete')) {
+      const idToDelete = e.target.getAttribute('data-id');
+      let resources = getStoredResources();
+      resources = resources.filter(r => r.id !== idToDelete);
+      saveResourcesToStorage(resources);
+      renderDashboard();
+    }
+  });
+
+  renderDashboard();
+}
+
+function sanitizeHTML(str) {
+  const temp = document.createElement('div');
+  temp.textContent = str;
+  return temp.innerHTML;
+}

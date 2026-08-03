@@ -45,3 +45,36 @@ document.addEventListener('DOMContentLoaded', () => {
     initDashboardPage();
   }
 });
+
+/* ==========================================================================
+   1. EXPLORER PAGE (index.html)
+   ========================================================================== */
+function initExplorerPage() {
+  const gridContainer = document.getElementById('resourceGrid');
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+
+  function renderCards() {
+    const resources = getStoredResources();
+    const query = searchInput.value.toLowerCase().trim();
+    const selectedCategory = categoryFilter.value;
+
+    const filtered = resources.filter(res => {
+      const matchesQuery = res.title.toLowerCase().includes(query) || 
+                           res.course.toLowerCase().includes(query);
+      const matchesCategory = selectedCategory === 'All' || res.category === selectedCategory;
+      return matchesQuery && matchesCategory;
+    });
+
+    gridContainer.innerHTML = '';
+
+    if (filtered.length === 0) {
+      gridContainer.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--apple-text-muted);">No resources found matching your criteria.</p>`;
+      return;
+    }
+
+    filtered.forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'card';
+
+      

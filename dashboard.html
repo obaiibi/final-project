@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View study stats and manage resources on StudyBud.">
+  <title>StudyBud | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>📚 StudyBud</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Explore Resources</a></li>
+        <li><a href="add-resource.html">Add Resource</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-head">
+      <div class="dashboard-banner">
+        <img src="images/library-workspace.jpg" alt="Organized Workspace" class="dashboard-img">
+      </div>
+      <h2>Resource Analytics & Management</h2>
+      <p>Track dynamic counts retrieved directly from LocalStorage.</p>
+    </section>
+
+    <!-- Dynamic Metrics Display -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <h3>Total Resources</h3>
+        <p id="totalCount">0</p>
+      </div>
+      <div class="metric-card">
+        <h3>Unique Courses</h3>
+        <p id="courseCount">0</p>
+      </div>
+      <div class="metric-card">
+        <h3>Top Category</h3>
+        <p id="topCategory">N/A</p>
+      </div>
+    </section>

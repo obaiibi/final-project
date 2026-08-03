@@ -22,10 +22,28 @@
       </ul>
     </nav>
   </header>
-  
+
   <!-- Main Content Area -->
   <main>
     <section class="hero">
       <h2>Campus Study Resource Hub</h2>
       <p>Find peer-recommended notes, guides, and study links for your courses.</p>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="controls-section">
+      <div class="search-box">
+        <label for="searchInput" class="sr-only">Search resources</label>
+        <input type="text" id="searchInput" placeholder="Search by topic or course code (e.g. CS101)...">
+      </div>
+      <div class="filter-box">
+        <label for="categoryFilter" class="sr-only">Filter by category</label>
+        <select id="categoryFilter">
+          <option value="All">All Categories</option>
+          <option value="Lecture Notes">Lecture Notes</option>
+          <option value="Study Guide">Study Guide</option>
+          <option value="Practice Quiz">Practice Quiz</option>
+          <option value="Cheatsheet">Cheatsheet</option>
+        </select>
+      </div>
     </section>
